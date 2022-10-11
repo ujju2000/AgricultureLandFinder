@@ -7,6 +7,8 @@
 /* blue and white shade website  */
 :root {
     --color-primary : rgba(250, 243, 243, 0.95);
+    --nav-color : rgba(181,237,245);
+    --home-color : rgb(132, 226, 240);
 }
 body {
     background-color: var(--color-primary);
@@ -19,7 +21,7 @@ a{
 nav {
     height : 5rem;
     width : 100vw;
-    background-color: rgba(181,237,245);
+    background-color: var(--nav-color);
     display : flex;
     justify-content: space-between;
     /* align-items: center; */
@@ -39,6 +41,7 @@ nav {
     flex-basis: 70%;
     display : flex;
     justify-content: space-between;
+    font-size: 20px;
 }
 
 
@@ -60,22 +63,24 @@ nav {
     text-decoration: underline;
     cursor : pointer;
 }
-.nav-options a::before{
+.nav-options a::after{
     content : '';
     position : absolute;
     bottom: 0px;
     left : 0;
+    height : 2px;
     transform: translateX(0);
     transition : all .4s ease-in-out;
-    z-index: -1;
+    width : 0%;
+    height : 2px;
+    background-color: green;
 }
 
-.nav-options a:hover::before{
-    transform : translateX(100%);
+.nav-options a:hover::after{
+    /* transform : translateX(100%); */
     transition : all .4s ease-in-out;
-    height : 2px;
-    width : 100%;
-    background-color: green;
+    
+    width : 100%;  
 }
 
 .buttons {
@@ -200,7 +205,7 @@ input {
     transform: translate(-50%,-50%);
     transition : all .4s ease-in-out;
     display : none;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .sign .left {   
     margin-top: 30px;
@@ -215,3 +220,48 @@ input {
 }
 
 
+/* home page */ 
+
+.home {
+    height : 50vh;
+    width : 100vw;
+    background-color: var(--home-color);
+    margin-top: 4px;
+    padding : 20px;
+    position : relative;
+}
+.top-part {
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.search-bar{
+    position : absolute;
+    margin-top: 10px;
+    height : 30px;
+    width : 50%;
+    /* background-color: black; */
+    top : 30%;
+    left : 55%;
+    transform  : translate(-50%,-50%);
+}
+.search[placeholder] {
+   font-weight: 800;
+}
+
+
+.search{
+    width : 40vw;
+    height : 40px;
+    /* border-radius: 110px 92px 96px 96px / 66px 55px 48px 48px; */
+    border-radius:110px 110px 114px 113px / 66px 66px 72px 64px;
+    
+}
+.search-bar button {
+    position: relative;
+    height : 40px;
+    margin-left: 0px;
+    right : 10%;
+    border-radius: 0px 0px 4px 0dpx / 66px 66px 72px 64px;
+}
